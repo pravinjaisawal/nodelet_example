@@ -1,0 +1,13 @@
+<launch>
+	<arg name="nodelet_ns" value="SubPubNodeletClass" />
+	
+	<!-- $ rosrun nodelet nodelet manager __name:=sample_nodelet_manager -->
+	<node pkg="nodelet" type="nodelet" args="manager" name="$(arg nodelet_ns)_manager" output="screen" />
+
+	<node pkg="nodelet" type="nodelet" args="load nodelet_example/SubPubNodeletClass $(arg nodelet_ns)_manager" name="$(arg nodelet_ns)_loader" output="screen">
+	  <remap from="$(arg nodelet_ns)_loader/person" to="person" />
+	  <remap from="$(arg nodelet_ns)_loader/hello_person" to="hello_person" />
+	</node>
+	
+	
+</launch>

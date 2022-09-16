@@ -1,0 +1,8 @@
+<library path="lib/libpubsubnodelet"> 
+	<class name="nodelet_example/SubPubNodeletClass" type="learning_nodelet_ns::SubPubNodeletClass"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			Subscribe /person topic and publish /hello_person topic
+		</description>
+	</class>
+</library>
